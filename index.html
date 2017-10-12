@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		 function spirala(n){
+			
+			var x = 0;
+			var y = 0;
+			var dx = [0,1,0,-1];
+			var dy = [1,0,-1,0];
+			var p = 0;
+			var br = 1;
+			var mat = [];
+			for(i=0;i<n;i++){
+					mat[i]= []
+				for (j=0;j<n;j++) {
+					 mat[i][j] = 0;
+				}
+			}
+			mat[n]=1;
+			
+			while(br <= (n*n)){
+				
+				
+				if (mat[x+dx[p]][y+dy[p]]!=0) {
+					p=(p+1)%4;
+				}
+				
+				mat[x][y] = br;
+				x+=dx[p];
+				y+=dy[p];
+				
+				
+				br++;
+			}
+			return mat;
+		}
+
+		
+	</script>
+</body>
+</html>
+
+
